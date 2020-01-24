@@ -1,0 +1,10 @@
+[Unit]
+Description=HeartiHealth-MLAPI App
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/python3 /var/www/HeartiHealth-MLAPI/Classifier1.py
+Type=idle
+
+[Install]
+WantedBy=multi-user.target
