@@ -137,22 +137,23 @@ def predictor():
         result = clf.predict(data=df)
 
         dict = {}
-        dict['Result'] = result[0]
-        dict['Status'] = 200
+        dict['Result'] = int(result[0])
+        dict['Status'] = int(200)
 
     except KeyError as e:
         
         dict = {}
         dict['Result'] = "Key missing " + str(e)
-        dict['Status'] = 500
+        dict['Status'] = int(500)
 
     except Exception as e:
         
         dict = {}
         dict['Result'] = "Something went wrong..!! " + str(e)
-        dict['Status'] = 500
+        dict['Status'] = int(500)
 
-    response = str(dict)
+    # response = str(dict)
+    response = json.dumps(dict)
     return response
 
 
